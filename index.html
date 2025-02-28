@@ -7,9 +7,22 @@
   </head>
   <body>
     <h1>Камень  Ножницы  Бумага</h1>
-    <button>Камень</button>
-    <button>Ножницы</button>
+
+    <button onclick="
+    // Компьютер случайным образом выбирает ход
+    // Сохраняем случайное число в переменной randomNumber
+    const randomNumber = Math.random();
+
+    // Преаброзуем чмсло в движение задав диапозон от 0 до 1 , разделив его на 3 равные части
+    if (randomNumber >= 0 && randomNumber < 1 / 3) {
+        console.log('Камень');
+    } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+        console.log('Бумага');
+    } else if (randomNumber >= 2 / 3 && randomNumber < 1)
+        console.log('Ножницы');
+    ">Камень</button>
     <button>Бумага</button>
+    <button>Ножницы</button>
     <script>
 
     </script>
