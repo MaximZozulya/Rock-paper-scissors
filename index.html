@@ -11,13 +11,15 @@
     <button onclick="playGame('Камень')">Камень</button>
     <button onclick="playGame('Бумага');">Бумага</button>
     <button onclick="playGame('Ножницы');">Ножницы</button>
-    
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
     <p class="js-score"></p>
     <button onclick="
         score.wins = 0;
         score.losses = 0;
         score.ties = 0; 
         localStorage.removeItem('score'); // 7 удаляем обьект из локального храгилища
+        updateScoreElement();
         ">Cбросить счет</button>
 
 
@@ -92,9 +94,10 @@
     // 9.2 Добавляем обновление  счета на стронице
     updateScoreElement();
 
-    // 3. Отобразить результат во всплывающем окне
-    alert(`Ты выбрал ${playerMove}.\nКомпьютер выбрал ${computerMove}.\n${result}\n
-Побед: ${score.wins}, Поражения: ${score.losses}, Ничья: ${score.ties}`);
+    // Меняем вывод результатов игры
+    document.querySelector('.js-result').innerHTML = result;
+    document.querySelector('.js-moves').innerHTML = `Ты: ${playerMove} - Компьютер: ${computerMove}`;
+
   }
 
    // 4.1 Обновляет счет в игре
