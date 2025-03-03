@@ -11,6 +11,8 @@
     <button onclick="playGame('Камень')">Камень</button>
     <button onclick="playGame('Бумага');">Бумага</button>
     <button onclick="playGame('Ножницы');">Ножницы</button>
+    
+    <p class="js-score"></p>
     <button onclick="
         score.wins = 0;
         score.losses = 0;
@@ -87,6 +89,9 @@
     // 5.1 содаём локалное хранилеще для результатов игры, сохраняем результаты
     localStorage.setItem('score', JSON.stringify(score)); // приобразовываем и сохраняем обьект score в строковом формате JSON 
 
+    // 9.2 Добавляем обновление  счета на стронице
+    updateScoreElement();
+
     // 3. Отобразить результат во всплывающем окне
     alert(`Ты выбрал ${playerMove}.\nКомпьютер выбрал ${computerMove}.\n${result}\n
 Побед: ${score.wins}, Поражения: ${score.losses}, Ничья: ${score.ties}`);
@@ -94,7 +99,7 @@
 
    // 4.1 Обновляет счет в игре
    let score = JSON.parse(localStorage.getItem('score')); // 6 меняем значения переменной score 
- 
+
    // 8 проверяем  являеться ли оценка нулевой
   if (score === null) {
     score = {
@@ -103,6 +108,13 @@
       ties: 0,
     };
   }
+
+  // 9.1 Добавляем счет на строницу
+   function updateScoreElement() {
+        document.querySelector('.js-score').innerHTML = `Побед: ${score.wins}, Поражения: ${score.losses}, Ничья: ${score.ties}`;
+    }
+   
+    updateScoreElement();
     </script>
   </body>
 </html>
