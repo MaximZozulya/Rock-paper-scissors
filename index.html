@@ -7,21 +7,22 @@
     <title>Камень  Ножницы  Бумага</title>
   </head>
   <body>
-    <h1 class="title">Камень  Ножницы  Бумага</h1>
-
-    <button onclick="playGame('Камень')"><img class="move-icon" src="img/rock-emoji.png" alt="rock"></button>
-    <button onclick="playGame('Бумага');"><img class="move-icon" src="img/paper-emoji.png" alt="paper"></button>
-    <button onclick="playGame('Ножницы');"><img class="move-icon" src="img/scissors-emoji.png" alt="scissors"></button>
-    <p class="js-result"></p>
-    <p class="js-moves"></p>
-    <p class="js-score"></p>
-    <button onclick="
-        score.wins = 0;
-        score.losses = 0;
-        score.ties = 0; 
-        localStorage.removeItem('score'); // 7 удаляем обьект из локального храгилища
-        updateScoreElement();
-        ">Cбросить счет</button>
+    <div class="block">
+      <h1 class="title">Камень  Ножницы  Бумага</h1>
+      <button class="move-button" onclick="playGame('Камень')"><img class="move-icon" src="img/Камень.png" alt="rock"></button>
+      <button class="move-button" onclick="playGame('Бумага');"><img class="move-icon" src="img/Бумага.png" alt="paper"></button>
+      <button class="move-button" onclick="playGame('Ножницы');"><img class="move-icon" src="img/Ножницы.png" alt="scissors"></button>
+      <p class="js-result result"></p>
+      <p class="js-moves"></p>
+      <p class="js-score score"></p>
+      <button class="reset-button" onclick="
+          score.wins = 0;
+          score.losses = 0;
+          score.ties = 0;
+          localStorage.removeItem('score'); // 7 удаляем обьект из локального храгилища
+          updateScoreElement();
+          ">Cбросить счет</button>
+    </div>
 
 
     <script src="js/main.js"></script>

@@ -72,8 +72,10 @@
   
       // Меняем вывод результатов игры
       document.querySelector('.js-result').innerHTML = result;
-      document.querySelector('.js-moves').innerHTML = `Ты: ${playerMove} - Компьютер: ${computerMove}`;
-  
+      document.querySelector('.js-moves')
+        .innerHTML = `Ты <img class="move-icon" src="img/${playerMove}.png" alt="rock">
+                         <img class="move-icon" src="img/${computerMove}.png" alt="scissors">
+                      Компьютер`;
     }
   
      // 4.1 Обновляет счет в игре
